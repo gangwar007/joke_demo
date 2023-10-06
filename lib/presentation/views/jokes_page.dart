@@ -54,13 +54,13 @@ class _Content extends StatefulWidget {
 
 class __ContentState extends State<_Content> {
   Timer? mytimer;
-  JokesBloc get pageBloc => context.read<JokesBloc>();
+  JokesBloc get jokeBloc => context.read<JokesBloc>();
 
   @override
   void initState() {
     super.initState();
     mytimer = Timer.periodic(const Duration(minutes: 1), (timer) {
-      pageBloc.add(const FetchNextJokeEvent());
+      jokeBloc.add(const FetchNextJokeEvent());
     });
   }
 
