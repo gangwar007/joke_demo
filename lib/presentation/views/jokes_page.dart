@@ -59,7 +59,7 @@ class __ContentState extends State<_Content> {
   @override
   void initState() {
     super.initState();
-    mytimer = Timer.periodic(Duration(seconds: 5), (timer) {
+    mytimer = Timer.periodic(const Duration(minutes: 1), (timer) {
       pageBloc.add(const FetchNextJokeEvent());
     });
   }

@@ -21,12 +21,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    late GetJokes _getAllCharacters;
+    late GetJokes getAllJokes;
     final api = ApiImpl();
     final localStorage = LocalStorageImpl(sharedPreferences: sharedPref);
     final repo = JokeRepositoryImpl(api: api, localStorage: localStorage);
 
-    _getAllCharacters = GetJokes(repository: repo);
+    getAllJokes = GetJokes(repository: repo);
     return MaterialApp(
         title: 'Joke Demo',
         theme: ThemeData(
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: RepositoryProvider.value(
-          value: _getAllCharacters,
+          value: getAllJokes,
           child: const AppView(),
         ));
   }

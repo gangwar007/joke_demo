@@ -18,7 +18,7 @@ class JokeRepositoryImpl implements JokeRepository {
   Future<List<Jokes>> getJokes() async {
     List<Jokes> list = [];
     final fetchedList = await _api.loadJokes();
-    final cachedList = await _localStorage.loadJokes();
+    final cachedList = _localStorage.loadJokes();
 
     if (cachedList.isNotEmpty) {
       if (cachedList.length >= 10) {

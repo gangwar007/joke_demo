@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:joke_app/domain/entity/jokes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-const cachedCharacterListKey = 'CACHED_CHARACTER_LIST_PAGE';
-
 abstract class LocalStorage {
   Future<bool> saveJokesPage({
     required List<Jokes> list,
